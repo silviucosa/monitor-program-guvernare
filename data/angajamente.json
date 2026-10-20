@@ -14,6 +14,20 @@
   "observatii": "Ministrul Finanțelor, Alexandru Nazare, a anunțat la audieri (19-20.10.2026) două rectificări: prima, pentru urgențe, până la finalul lui octombrie; a doua, de reglaj, la finalul lui noiembrie. Surse: Profit.ro 19.10.2026, Știrile ProTV/Agerpres 20.10.2026."
  },
  {
+  "id": "A104",
+  "capitol": "Finanțe",
+  "masura": "M1",
+  "angajament": "Prima rectificare bugetară, pentru urgențe (sănătate, MAI, ambulanțe, dobânzi)",
+  "termen": "2026-10-31",
+  "precizie": "zi",
+  "baza_termen": "anunțat de ministrul Finanțelor la audieri, 19-20.10.2026",
+  "tinta": "până la finalul lui octombrie, fără depășirea țintei de deficit",
+  "constanta": "nu",
+  "status": "de urmărit",
+  "ultima_verificare": "2026-10-20",
+  "observatii": "Angajament declarat public, nu scris în program. Surse: Profit.ro 19.10.2026, Știrile ProTV/Agerpres 20.10.2026."
+ },
+ {
   "id": "A002",
   "capitol": "Finanțe",
   "masura": "M1",
