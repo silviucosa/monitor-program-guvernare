@@ -135,10 +135,10 @@ window.dash=(function(){
   <section class="sec" id="audit">
     <div class="tiles">
       <div class="card tile"><div class="k">Măsuri în program</div><div class="v dash-skeleton" data-source="audit" data-field="total">—</div><div class="n">toate capitolele</div></div>
+      <div class="card tile"><div class="k">Cu termen și cifră</div><div class="v dash-skeleton" data-source="audit" data-field="ambele">—</div><div class="n">complet verificabile</div></div>
+      <div class="card tile"><div class="k">Doar cu termen</div><div class="v dash-skeleton" data-source="audit" data-field="doar_termen">—</div><div class="n">au dată, nu au țintă</div></div>
+      <div class="card tile"><div class="k">Doar cu cifră</div><div class="v dash-skeleton" data-source="audit" data-field="doar_cifra">—</div><div class="n">au țintă, nu au dată</div></div>
       <div class="card tile hl"><div class="k">Fără termen și fără cifră</div><div class="v dash-skeleton" data-source="audit" data-field="fara">—</div><div class="n"><span data-source="audit" data-field="fara_pct">—</span> din total</div></div>
-      <div class="card tile"><div class="k">Cu termen</div><div class="v dash-skeleton" data-source="audit" data-field="cu_termen">—</div><div class="n">dată, lună, an sau interval</div></div>
-      <div class="card tile"><div class="k">Cu cifră</div><div class="v dash-skeleton" data-source="audit" data-field="cu_cifra">—</div><div class="n">țintă cuantificată</div></div>
-      <div class="card tile"><div class="k">Termen și cifră</div><div class="v dash-skeleton" data-source="audit" data-field="ambele">—</div><div class="n">complet verificabile</div></div>
     </div>
 
     <div class="card" id="pe-capitole">
@@ -217,12 +217,12 @@ window.dash=(function(){
 const CATS = ['Termen și cifră', 'Doar termen', 'Doar cifră', 'Fără termen și fără cifră'];
 dash.calc('audit', {
   inputs: ['masuri'], title: 'Totaluri măsuri',
-  description: 'Numără măsurile programului după ce conțin: termen, cifră, ambele sau niciuna.',
+  description: 'Împarte măsurile programului în patru categorii care nu se suprapun: termen și cifră, doar termen, doar cifră, niciuna.',
   fn: (masuri) => {
     const n = masuri.length, fara = masuri.filter((r) => r.are_termen === 'nu' && r.are_cifra === 'nu').length;
     return [{ total: n, fara, fara_pct: Math.round(fara / n * 100) + '%',
-      cu_termen: masuri.filter((r) => r.are_termen === 'da').length,
-      cu_cifra: masuri.filter((r) => r.are_cifra === 'da').length,
+      doar_termen: masuri.filter((r) => r.are_termen === 'da' && r.are_cifra === 'nu').length,
+      doar_cifra: masuri.filter((r) => r.are_termen === 'nu' && r.are_cifra === 'da').length,
       ambele: masuri.filter((r) => r.are_termen === 'da' && r.are_cifra === 'da').length }];
   },
 });
