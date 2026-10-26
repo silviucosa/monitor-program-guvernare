@@ -10,8 +10,8 @@
   "tinta": "30 de zile de la învestire, înainte de 30.11",
   "constanta": "nu",
   "status": "de urmărit",
-  "ultima_verificare": "2026-10-16",
-  "observatii": "Ministrul Finanțelor, Alexandru Nazare, a anunțat la audieri (19-20.10.2026) două rectificări: prima, pentru urgențe, până la finalul lui octombrie; a doua, de reglaj, la finalul lui noiembrie. Surse: Profit.ro 19.10.2026, Știrile ProTV/Agerpres 20.10.2026."
+  "ultima_verificare": "2026-10-26",
+  "observatii": "Ministrul Finanțelor, Alexandru Nazare, a anunțat la audieri (19-20.10.2026) două rectificări: prima, pentru urgențe, până la finalul lui octombrie; a doua, de reglaj, la finalul lui noiembrie. Surse: Profit.ro 19.10.2026, Știrile ProTV/Agerpres 20.10.2026. Verificare 26.10.2026: proiectul primei rectificări nu apare încă publicat; Guvernul intenționează adoptarea în săptămâna 26-30.10, a doua rectificare la finalul lui noiembrie (Rador, „Guvernul pregătește prima rectificare bugetară din acest an...”, 26.10.2026, https://www.rador.ro/2026/10/26/guvernul-pregateste-prima-rectificare-bugetara-din-acest-an-si-masuri-urgente-impotriva-violentei-in-scoli/). Învestirea Guvernului Niculescu pe 20.10.2026 confirmată (Bursa, „Guvernul Niculescu a trecut de Parlament”, https://www.bursa.ro/guvernul-niculescu-a-trecut-de-parlament-00117065)."
  },
  {
   "id": "A104",
@@ -24,8 +24,8 @@
   "tinta": "până la finalul lui octombrie, fără depășirea țintei de deficit",
   "constanta": "nu",
   "status": "de urmărit",
-  "ultima_verificare": "2026-10-20",
-  "observatii": "Angajament declarat public, nu scris în program. Surse: Profit.ro 19.10.2026, Știrile ProTV/Agerpres 20.10.2026."
+  "ultima_verificare": "2026-10-26",
+  "observatii": "Angajament declarat public, nu scris în program. Surse: Profit.ro 19.10.2026, Știrile ProTV/Agerpres 20.10.2026. Verificare 26.10.2026: fără proiect publicat și fără sume; adoptarea e anunțată pentru săptămâna 26-30.10 (Rador, 26.10.2026, https://www.rador.ro/2026/10/26/guvernul-pregateste-prima-rectificare-bugetara-din-acest-an-si-masuri-urgente-impotriva-violentei-in-scoli/; Radio Constanța, 26.10.2026, https://www.radioconstanta.ro/2026/10/26/prima-rectificare-bugetara-din-acest-an-pe-masa-executivului-condus-de-luca-niculescu/)."
  },
  {
   "id": "A002",
@@ -402,8 +402,8 @@
   "tinta": "30 de zile, apoi lunar",
   "constanta": "nu",
   "status": "de urmărit",
-  "ultima_verificare": "2026-10-16",
-  "observatii": ""
+  "ultima_verificare": "2026-10-26",
+  "observatii": "Verificare 26.10.2026: nicio publicare a stocului de dosare de pensie întârziate găsită. Învestirea Guvernului Niculescu pe 20.10.2026 confirmată (Bursa, „Guvernul Niculescu a trecut de Parlament”, https://www.bursa.ro/guvernul-niculescu-a-trecut-de-parlament-00117065)."
  },
  {
   "id": "A029",
@@ -626,8 +626,8 @@
   "tinta": "APM Constanța și Administrația Unică a Dunării",
   "constanta": "da",
   "status": "de urmărit",
-  "ultima_verificare": "2026-10-16",
-  "observatii": ""
+  "ultima_verificare": "2026-10-26",
+  "observatii": "Verificare 26.10.2026: niciun act sau proiect privind comasarea administrațiilor portuare găsit."
  },
  {
   "id": "A045",
@@ -640,8 +640,8 @@
   "tinta": "peste 900 mil. euro, Ecluza Năvodari",
   "constanta": "da",
   "status": "de urmărit",
-  "ultima_verificare": "2026-10-16",
-  "observatii": ""
+  "ultima_verificare": "2026-10-26",
+  "observatii": "Verificare 26.10.2026: retehnologizarea Ecluzei Năvodari (CN ACN, 495,9 mil. lei, fonduri UE) e în execuție; ecluza nr. 1 cu termen 16.11.2026, proiectul până la 31.12.2029 (Radio Constanța, 27.05.2026, https://www.radioconstanta.ro/2026/05/27/ecluza-de-la-navodari-retehnologizata-cu-fonduri-ue-de-40-de-milioane-de-euro/). Lucrare începută înainte de program; nicio decizie nouă de accelerare găsită."
  },
  {
   "id": "A046",
@@ -654,8 +654,8 @@
   "tinta": "fără dată",
   "constanta": "da",
   "status": "de urmărit",
-  "ultima_verificare": "2026-10-16",
-  "observatii": ""
+  "ultima_verificare": "2026-10-26",
+  "observatii": "Verificare 26.10.2026: lucrările nu au început; documentațiile anunțate pentru toamna lui 2026, contractul de proiectare din 2020 prelungit repetat (G4Media, https://www.g4media.ro/drumul-care-uneste-litoralul-de-delta-folosit-in-campaniile-electorale-dar-blocat-in-birocratie-de-peste-10-ani-contractul-semnat-in-2020-de-cnair-a-fost-prelungit-de-10-ori-inca-nu-se-stie-cand.html)."
  },
  {
   "id": "A047",
@@ -863,9 +863,9 @@
   "baza_termen": "dată din program",
   "tinta": "800 mil. euro BEI, ≈700 MW retrași temporar",
   "constanta": "da",
-  "status": "de urmărit",
-  "ultima_verificare": "2026-10-16",
-  "observatii": ""
+  "status": "în curs",
+  "ultima_verificare": "2026-10-26",
+  "observatii": "Proiect în execuție: prima turnare continuă de beton în mai 2026, reactorul se oprește în 2027 pentru circa 32 de luni, revenire în vara lui 2030 (Curs de Guvernare, „Nuclearelectrica: Retehnologizarea Unității 1 e în grafic”, 25.08.2026, https://cursdeguvernare.ro/director-nuclearelectrica-proiect-retehnologizare-unitate-1-cernavoda.html). Împrumutul BEI de 800 mil. euro aprobat de Consiliul BEI pe 15.07.2026, contract încă nesemnat (Economedia, 16.07.2026, https://economedia.ro/nuclearelectrica-primeste-un-imprumut-de-800-milioane-de-euro-de-la-bei-pentru-retehnologizarea-unitatii-1-de-la-cernavoda.html)."
  },
  {
   "id": "A062",
@@ -877,9 +877,9 @@
   "baza_termen": "dată din program",
   "tinta": "≈1.400 MW",
   "constanta": "da",
-  "status": "de urmărit",
-  "ultima_verificare": "2026-10-16",
-  "observatii": ""
+  "status": "în curs",
+  "ultima_verificare": "2026-10-26",
+  "observatii": "Ministerul Energiei a transmis CE prenotificarea pentru ajutorul de stat (G4Media, 28.05.2026, https://www.g4media.ro/bolojan-romania-a-transmis-comisiei-europene-prenotificarea-pentru-accesarea-ajutorului-de-stat-necesar-constructiei-reactoarelor-3-si-4-de-la-cernavoda.html). Nici aprobarea CE, nici decizia finală de investiție nu sunt încă anunțate."
  },
  {
   "id": "A063",
@@ -891,9 +891,9 @@
   "baza_termen": "dată din program",
   "tinta": "≈3.100 MW, 3 perimetre",
   "constanta": "da",
-  "status": "de urmărit",
-  "ultima_verificare": "2026-10-16",
-  "observatii": ""
+  "status": "în curs",
+  "ultima_verificare": "2026-10-26",
+  "observatii": "Guvernul a aprobat lista perimetrelor eoliene offshore concesionabile, Faza 1 ≈3,1 GW (Curs de Guvernare, 27.08.2026, https://cursdeguvernare.ro/guvernul-aproba-perimetrele-eoliene-offshore-din-marea-neagra-31-gw-si-o-valoare-adaugata-estimata-la-27-mld-e.html; Ecopolitic, 27.08.2026, https://ecopolitic.ro/guvernul-a-aprobat-lista-perimetrelor-eoliene-offshore-care-pot-fi-concesionate-in-sectorul-romanesc-al-marii-negre/). Procedura competitivă de concesionare nu e încă lansată."
  },
  {
   "id": "A064",
@@ -1172,8 +1172,8 @@
   "tinta": "fără dată, fără sumă",
   "constanta": "da",
   "status": "de urmărit",
-  "ultima_verificare": "2026-10-16",
-  "observatii": ""
+  "ultima_verificare": "2026-10-26",
+  "observatii": "Verificare 26.10.2026: lucrările de extindere a Bazei 57 continuă din contractul lansat în 2021 (HG 2019, finalizare estimată 2042); nicio decizie nouă a acestui Guvern găsită (Știrile ProTV, 16.01.2025, https://stirileprotv.ro/stiri/actualitate/ministerul-apararii-respinge-dezinformarile-privind-baza-57-aeriana-proiectul-parte-a-masurilor-defensive.html)."
  },
  {
   "id": "A084",
@@ -1185,9 +1185,9 @@
   "baza_termen": "dată din program",
   "tinta": "fără dată, fără sumă",
   "constanta": "da",
-  "status": "de urmărit",
-  "ultima_verificare": "2026-10-16",
-  "observatii": ""
+  "status": "în curs",
+  "ultima_verificare": "2026-10-26",
+  "observatii": "Sisteme antidronă aeriene și navale achiziționate, în teste, operaționale până la finalul anului în porturile militare Constanța, Mangalia, Tulcea și Brăila (Digi24, 16.09.2026, https://www.digi24.ro/stiri/actualitate/video-imagini-cu-noile-sisteme-antidrona-care-vor-proteja-porturile-militare-de-la-marea-neagra-cand-vor-deveni-operationale-3949847). Contractul, furnizorul și valoarea nu sunt publice."
  },
  {
   "id": "A085",
@@ -1228,8 +1228,8 @@
   "tinta": "30 de zile",
   "constanta": "nu",
   "status": "de urmărit",
-  "ultima_verificare": "2026-10-16",
-  "observatii": ""
+  "ultima_verificare": "2026-10-26",
+  "observatii": "Verificare 26.10.2026: niciun inventar public al dosarelor europene prioritare găsit. Învestirea Guvernului Niculescu pe 20.10.2026 confirmată (Bursa, „Guvernul Niculescu a trecut de Parlament”, https://www.bursa.ro/guvernul-niculescu-a-trecut-de-parlament-00117065)."
  },
  {
   "id": "A088",
@@ -1298,8 +1298,8 @@
   "tinta": "4,35 mld. euro net; pierdere estimată ≈0,97 mld.",
   "constanta": "nu",
   "status": "de urmărit",
-  "ultima_verificare": "2026-10-16",
-  "observatii": ""
+  "ultima_verificare": "2026-10-26",
+  "observatii": "Cererea de plată nr. 6 depusă la CE pe 30.09.2026: 6,04 mld. euro brut, 4,35 mld. euro net, 104 ținte și jaloane (Economedia, „PNRR, la final: România a depus cererea de plată nr. 6”, 01.10.2026, https://economedia.ro/pnrr-la-final-romania-a-depus-cererea-de-plata-nr-6.html). Verificare 26.10.2026: decizia CE încă neanunțată."
  },
  {
   "id": "A093",
