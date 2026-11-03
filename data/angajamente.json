@@ -51,9 +51,9 @@
   "baza_termen": "dată din program",
   "tinta": "decembrie 2026",
   "constanta": "nu",
-  "status": "de urmărit",
-  "ultima_verificare": "2026-10-16",
-  "observatii": ""
+  "status": "în curs",
+  "ultima_verificare": "2026-11-03",
+  "observatii": "Guvernul a aprobat pe 30.10.2026 memorandumul privind ordonatorii principali de credite ai căror bugete intră în Strategia fiscal-bugetară 2027-2029 (Comunicat Guvern, Agerpres, https://agerpres.ro/comunicate/2026/10/30/comunicat-de-presa---guvern--1608594). Strategia nu e adoptată."
  },
  {
   "id": "A004",
@@ -1187,7 +1187,7 @@
   "constanta": "da",
   "status": "în curs",
   "ultima_verificare": "2026-11-03",
-  "observatii": "Sisteme antidronă aeriene și navale achiziționate, în teste, operaționale până la finalul anului în porturile militare Constanța, Mangalia, Tulcea și Brăila (Digi24, 16.09.2026, https://www.digi24.ro/stiri/actualitate/video-imagini-cu-noile-sisteme-antidrona-care-vor-proteja-porturile-militare-de-la-marea-neagra-cand-vor-deveni-operationale-3949847). Contractul, furnizorul și valoarea nu sunt publice. Verificare 02.11.2026: intrarea în operare neconfirmată. Comandantul portului militar Constanța indica sfârșitul lui octombrie 2026 pentru sistemul Black Talon, instalat întâi la Constanța, apoi Mangalia, Brăila și Tulcea (SpotMedia, 17.09.2026, https://spotmedia.ro/stiri/eveniment/romania-instaleaza-sistemul-american-antidrona-black-talon-in-patru-porturi-video); Digi24 indica finalul anului. Verificare 03.11.2026: intrarea în operare neconfirmată; nicio sursă nouă găsită după termenul de sfârșit de octombrie indicat pentru Constanța."
+  "observatii": "Sisteme antidronă aeriene și navale, în teste, operaționale până la finalul anului în porturile militare Constanța, Mangalia, Tulcea și Brăila (Digi24, 16.09.2026, https://www.digi24.ro/stiri/actualitate/video-imagini-cu-noile-sisteme-antidrona-care-vor-proteja-porturile-militare-de-la-marea-neagra-cand-vor-deveni-operationale-3949847). Contractul, furnizorul și valoarea nu sunt publice. Verificare 02.11.2026: intrarea în operare neconfirmată. Comandantul portului militar Constanța indica sfârșitul lui octombrie 2026 pentru sistemul Black Talon, instalat întâi la Constanța, apoi Mangalia, Brăila și Tulcea (SpotMedia, 17.09.2026, https://spotmedia.ro/stiri/eveniment/romania-instaleaza-sistemul-american-antidrona-black-talon-in-patru-porturi-video); Digi24 indica finalul anului. Verificare 03.11.2026: intrarea în operare neconfirmată; nicio sursă nouă găsită după termenul de sfârșit de octombrie indicat pentru Constanța. Corecție 03.11.2026: proveniența e raportată diferit: „achiziționate” (Digi24, 16.09.2026), respectiv donate, într-un program cu Marina SUA (Știrile ProTV, 16.09.2026, https://stirileprotv.ro/romania-isi-intareste-apararea-la-marea-neagra-ce-sisteme-antidrona-au-fost-testate-in-portul-militar-din-constanta.html). Nu există o confirmare oficială găsită."
  },
  {
   "id": "A085",
@@ -1311,9 +1311,9 @@
   "baza_termen": "dată din program",
   "tinta": "Legea 183/2026",
   "constanta": "nu",
-  "status": "de urmărit",
-  "ultima_verificare": "2026-10-16",
-  "observatii": ""
+  "status": "în curs",
+  "ultima_verificare": "2026-11-03",
+  "observatii": "OUG adoptată pe 30.10.2026 trece proiectele spitalicești eliminate din PNRR pe Programul Sănătate 2021-2027 și obligă coordonatorii să raporteze investițiile nefinanțate până la 30.11.2026 (Comunicat Guvern, Agerpres, https://agerpres.ro/comunicate/2026/10/30/comunicat-de-presa---guvern--1608594). Nu arată stadiul tuturor proiectelor nefinalizate."
  },
  {
   "id": "A094",
