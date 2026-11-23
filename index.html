@@ -67,8 +67,8 @@ window.dash=(function(){
   setLink:function(n){try{history.replaceState(null,'','#'+n);}catch(e){}}
  };
  var v='?v='+Date.now();
- Promise.all(['masuri','angajamente','meta'].map(function(n){return fetch('data/'+n+'.json'+v).then(function(r){if(!r.ok)throw new Error(n);return r.json();});}))
-  .then(function(res){raw.masuri=res[0];raw.angajamente=res[1];state='ok';
+ Promise.all(['masuri','angajamente','meta','verificare_200'].map(function(n){return fetch('data/'+n+'.json'+v).then(function(r){if(!r.ok)throw new Error(n);return r.json();});}))
+  .then(function(res){raw.masuri=res[0];raw.angajamente=res[1];raw.verificare_200=res[3];state='ok';
     var el=document.getElementById('actualizat'); if(el&&res[2].actualizat){var d=res[2].actualizat.split('-');el.textContent='Ultima actualizare: '+d[2]+'.'+d[1]+'.'+d[0]+'. ';}
     run();})
   .catch(function(e){state='error';console.error(e);run();});
@@ -104,6 +104,7 @@ window.dash=(function(){
 .pg table{width:100%;border-collapse:collapse;font-size:var(--cds-font-size-caption)}
 .pg th{position:sticky;top:0;background:var(--color-panel);text-align:left;font-weight:var(--cds-font-weight-medium);padding:var(--cds-pad-xs) var(--cds-pad-sm);border-bottom:1px solid var(--color-border-line);cursor:pointer;white-space:nowrap}
 .pg td{padding:var(--cds-pad-xs) var(--cds-pad-sm);border-bottom:1px solid var(--color-border-line);vertical-align:top}
+.pg td a{color:var(--color-fg)}
 .pg td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .late{color:var(--color-bad)} .soon{color:var(--color-warn)} .none{color:var(--color-fg-muted);font-style:italic} .bad{color:var(--color-bad)}
 .cnt{color:var(--color-fg-muted)}
@@ -119,6 +120,14 @@ window.dash=(function(){
 #tab td:nth-child(3),#tab-m td:nth-child(3){grid-column:1/-1;font-size:var(--cds-font-size-body)}
 #tab td:nth-child(5){grid-column:1/-1;color:var(--color-fg-muted)}
 #tab td.hide-n,#tab-m td.hide-n{display:none}
+#tab-v thead{display:none}
+#tab-v tr{display:grid;grid-template-columns:auto 1fr;column-gap:var(--cds-gap-sm);padding:var(--cds-pad-sm) 0;border-bottom:1px solid var(--color-border-line)}
+#tab-v td{display:block;border:none;padding:2px 0}
+#tab-v td:nth-child(1){font-weight:600}
+#tab-v td:nth-child(3){color:var(--color-fg-muted);text-align:right}
+#tab-v td:nth-child(2){grid-column:1/-1;order:3;font-size:var(--cds-font-size-body)}
+#tab-v td:nth-child(5){grid-column:1/-1;order:4}
+#tab-v td.hide-n{display:none}
 }
 </style>
 <div class="pg">
@@ -145,13 +154,30 @@ window.dash=(function(){
       <h2>Ce s-a găsit la cele 200 de măsuri fără termen și fără cifră</h2>
       <p class="note">Bilanț cumulat la 23.11.2026, pentru intervalul 20.10-23.11.2026, pe surse publice, din patru verificări (02.11, 03.11, 16.11 și 23.11). Fiecare măsură e numărată o singură dată, la cel mai avansat pas găsit. Unul dintre acte merge în sens contrar măsurii (mandatele provizorii prelungite la BID). Verificarea e incompletă: mai multe site-uri oficiale nu au putut fi citite, iar cea din 23.11 a acoperit doar actele adoptate de Guvern. Comitetele, grupurile de lucru și calendarele fără act de fond nu sunt socotite progres. „Niciun progres vizibil” înseamnă că nu am găsit un pas oficial, nu că acesta sigur nu există. Pentru angajamentele datate, „termen depășit” înseamnă că termenul a trecut fără realizare confirmată, iar „neîndeplinit”, că nu există niciun pas de fond.</p>
       <div class="tiles">
-        <div class="card tile"><div class="k">Unele progrese</div><div class="v">11</div><div class="n">există un act, departe de ce s-a promis</div></div>
-        <div class="card tile"><div class="k">Nimic de fond</div><div class="v">15</div><div class="n">pași de lucru, fără act de fond</div></div>
-        <div class="card tile"><div class="k">Doar declarații</div><div class="v">68</div><div class="n">anunțuri publice, fără act</div></div>
-        <div class="card tile hl"><div class="k">Niciun progres vizibil</div><div class="v">106</div><div class="n">nu am găsit un pas oficial</div></div>
+        <div class="card tile"><div class="k">Unele progrese</div><div class="v dash-skeleton" data-source="verif_sumar" data-field="act">—</div><div class="n">există un act, departe de ce s-a promis</div></div>
+        <div class="card tile"><div class="k">Nimic de fond</div><div class="v dash-skeleton" data-source="verif_sumar" data-field="pas">—</div><div class="n">pași de lucru, fără act de fond</div></div>
+        <div class="card tile"><div class="k">Doar declarații</div><div class="v dash-skeleton" data-source="verif_sumar" data-field="decl">—</div><div class="n">anunțuri publice, fără act</div></div>
+        <div class="card tile hl"><div class="k">Niciun progres vizibil</div><div class="v dash-skeleton" data-source="verif_sumar" data-field="nimic">—</div><div class="n">nu am găsit un pas oficial</div></div>
+      </div>
+      <div class="ctl" style="margin-top:var(--cds-gap-md)">
+        <select id="v-pr" aria-label="Progres"><option value="">Orice progres</option></select>
+        <select id="v-cap" aria-label="Capitol"><option value="">Toate capitolele</option></select>
+        <input type="search" id="v-q" placeholder="Caută în măsuri" aria-label="Caută">
+        <span class="cnt" id="v-n"></span>
+      </div>
+      <div class="tbox">
+        <table id="tab-v">
+          <thead><tr>
+            <th data-k="capitol">Capitol</th>
+            <th data-k="text">Măsura</th>
+            <th data-k="progres">Ce s-a găsit</th>
+            <th data-k="nota" class="hide-n">Ce s-a întâmplat</th>
+            <th data-k="sursa_site">Sursa</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
       </div>
     </div>
-
     <div class="card" id="pe-capitole">
       <h2>Cât de verificabil e fiecare capitol</h2>
       <p class="note">Măsurile fiecărui capitol, după ce conțin. Ordonate după ponderea măsurilor fără termen și fără cifră.</p>
@@ -190,6 +216,12 @@ window.dash=(function(){
       <div class="card tile"><div class="k">Scadente în 2026</div><div class="v dash-skeleton" data-source="sumar" data-field="in_2026">—</div><div class="n">până la 31 decembrie</div></div>
       <div class="card tile"><div class="k">Constanța și Dobrogea</div><div class="v dash-skeleton" data-source="sumar" data-field="constanta">—</div><div class="n">port, Cernavodă, Marea Neagră</div></div>
     </div>
+    <div class="tiles">
+      <div class="card tile hl"><div class="k">Termen depășit</div><div class="v dash-skeleton" data-source="pe_status" data-field="depasit">—</div><div class="n">termenul a trecut, fără realizare confirmată</div></div>
+      <div class="card tile"><div class="k">Neîndeplinit</div><div class="v dash-skeleton" data-source="pe_status" data-field="neindeplinit">—</div><div class="n">niciun pas de fond</div></div>
+      <div class="card tile"><div class="k">În curs</div><div class="v dash-skeleton" data-source="pe_status" data-field="in_curs">—</div><div class="n">există un pas de fond</div></div>
+      <div class="card tile"><div class="k">Îndeplinit</div><div class="v dash-skeleton" data-source="pe_status" data-field="indeplinit">—</div><div class="n">cu sursă verificabilă</div></div>
+    </div>
     <div class="card" id="pe-trimestre">
       <h2>Scadențe pe trimestre</h2>
       <p class="note">Câte angajamente urmărite ajung la termen în fiecare trimestru.</p>
@@ -197,7 +229,7 @@ window.dash=(function(){
     </div>
     <div class="card" id="lista">
       <h2>Angajamente și termene</h2>
-      <p class="note">Roșu: termen depășit și neîndeplinit. Portocaliu: în următoarele 30 de zile. Termenele relative presupun învestirea pe 20.10.2026.</p>
+      <p class="note">Statusuri: „termen depășit”, termenul a trecut fără realizare confirmată; „neîndeplinit”, niciun pas de fond; „în curs”, există un proiect de act, o lege depusă sau o procedură lansată; „ratat”, doar cu sursă că nu se mai face. Roșu: termen depășit și neîndeplinit. Portocaliu: în următoarele 30 de zile. Termenele relative presupun învestirea pe 20.10.2026.</p>
       <div class="ctl">
         <select id="f-cap" aria-label="Capitol"><option value="">Toate capitolele</option></select>
         <select id="f-ori" aria-label="Orizont">
@@ -270,6 +302,21 @@ dash.calc('pe_trimestru', {
   },
 });
 
+dash.calc('verif_sumar', {
+  inputs: ['verificare_200'], title: 'Bilanțul celor 200 de măsuri',
+  fn: (verificare_200) => {
+    const n = (p) => verificare_200.filter((r) => r.progres === p).length;
+    return [{ act: n('Unele progrese'), pas: n('Nimic de fond'), decl: n('Doar declarații'), nimic: n('Niciun progres vizibil') }];
+  },
+});
+dash.calc('pe_status', {
+  inputs: ['angajamente'], title: 'Angajamente pe status',
+  fn: (angajamente) => {
+    const n = (s) => angajamente.filter((r) => r.status === s).length;
+    return [{ depasit: n('termen depășit'), neindeplinit: n('neîndeplinit'), in_curs: n('în curs'), indeplinit: n('îndeplinit') }];
+  },
+});
+const PROG = ['Unele progrese', 'Nimic de fond', 'Doar declarații', 'Niciun progres vizibil'];
 const catColor = (c) => ({ 'Termen și cifră': dash.colors[0], 'Doar termen': dash.colors[1], 'Doar cifră': dash.colors[2], 'Fără termen și fără cifră': 'var(--cds-chart-status-critical)' })[c];
 const fmtD = (s) => { if (!s) return 'fără termen'; const [y, mo, d] = s.split('-'); return d + '.' + mo + '.' + y; };
 const today = new Date().toISOString().slice(0, 10);
@@ -388,6 +435,35 @@ function drawM() {
   }));
 }
 
+function srcCell(r) {
+  const td = document.createElement('td');
+  if (r.sursa && /^https:\/\//.test(r.sursa)) { const a = document.createElement('a'); a.href = r.sursa; a.target = '_blank'; a.rel = 'noopener'; a.textContent = r.sursa_site || 'sursa'; td.append(a); }
+  else td.textContent = r.sursa_site || '';
+  return td;
+}
+const vPr = document.getElementById('v-pr'), vCap = document.getElementById('v-cap'), vQ = document.getElementById('v-q');
+const vS = { k: 'progres', dir: 1 };
+[vPr, vCap].forEach((e) => e.addEventListener('change', drawV)); vQ.addEventListener('input', drawV);
+sortable('tab-v', vS, drawV);
+function drawV() {
+  const d = dash.data('verificare_200'), tb = document.querySelector('#tab-v tbody');
+  if (d.status !== 'ok') { tb.replaceChildren(); document.getElementById('v-n').textContent = ''; return; }
+  fillSelect(vPr, PROG, 'Orice progres'); fillSelect(vCap, [...new Set(d.data.map((r) => r.capitol))], 'Toate capitolele');
+  let rows = d.data.slice();
+  if (vPr.value) rows = rows.filter((r) => r.progres === vPr.value);
+  if (vCap.value) rows = rows.filter((r) => r.capitol === vCap.value);
+  const q = vQ.value.trim().toLowerCase();
+  if (q) rows = rows.filter((r) => (r.text + ' ' + r.capitol + ' ' + (r.nota || '')).toLowerCase().includes(q));
+  const ord = (r) => vS.k === 'progres' ? String(PROG.indexOf(r.progres)) : String(r[vS.k] || '');
+  rows.sort((a, b) => ord(a).localeCompare(ord(b), 'ro', { numeric: true }) * vS.dir);
+  document.getElementById('v-n').textContent = rows.length + ' din ' + d.data.length;
+  tb.replaceChildren(...rows.map((r) => {
+    const tr = document.createElement('tr');
+    tr.append(cell(r.capitol), cell(r.text), cell(r.progres, r.progres === 'Niciun progres vizibil' ? 'bad' : ''), cell(r.nota || '', 'hide-n'), srcCell(r));
+    return tr;
+  }));
+}
+
 const fCap = document.getElementById('f-cap'), fOri = document.getElementById('f-ori'), fSt = document.getElementById('f-st'), fCt = document.getElementById('f-ct'), fQ = document.getElementById('f-q');
 const fS = { k: 'termen', dir: 1 };
 [fCap, fOri, fSt, fCt].forEach((e) => e.addEventListener('change', drawA)); fQ.addEventListener('input', drawA);
@@ -427,9 +503,9 @@ function draw() {
   fillTiles('audit');
   const m = dash.data('masuri');
   if (m.status === 'ok') { fillSelect(mCap, [...new Set(m.data.map((r) => r.capitol))], 'Toate capitolele'); fillSelect(mCat, CATS, 'Toate categoriile'); }
-  if (tab === 'audit') { drawCap(); drawM(); }
+  if (tab === 'audit') { fillTiles('verif_sumar'); drawV(); drawCap(); drawM(); }
   else {
-    fillTiles('sumar');
+    fillTiles('sumar'); fillTiles('pe_status');
     const a = dash.data('angajamente');
     if (a.status === 'ok') { fillSelect(fCap, [...new Set(a.data.map((r) => r.capitol))], 'Toate capitolele'); fillSelect(fSt, [...new Set(a.data.map((r) => r.status))], 'Orice status'); }
     drawTrim(); drawA();
